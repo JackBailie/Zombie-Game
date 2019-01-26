@@ -7,7 +7,12 @@ class BackGround
 {
 
 private:
+	sf::Sprite backsprite;
 	sf::Sprite sprite;
+	sf::Sprite leftsprite;
+	sf::Sprite rightsprite;
+	sf::Sprite topsprite;
+	sf::Sprite bottomsprite;
 
 public:
 	BackGround(TextureSystem* ts);

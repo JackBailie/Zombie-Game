@@ -79,6 +79,7 @@ void TextureSystem::InitialiseTextures()
 	textures[tex_Zombie_Attack] = LoadTexture("zombie-attack.png");
 	textures[tex_Zombie_Idle] = LoadTexture("zombie-idle.png");
 	textures[tex_Zombie_Move] = LoadTexture("zombie-move.png");
+	textures[tex_MetalSlab] = LoadTexture("metalslab.png");
 
 	std::cout << "File loading complete" << std::endl;
 	

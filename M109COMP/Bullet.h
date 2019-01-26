@@ -11,9 +11,10 @@ private:
 	sf::Sprite sprite;
 	sf::Vector2f pos;
 	float lifeTime;
+	int Damage;
 
 public:
-	Bullet(TextureSystem* ts, float posx, float posy, float rotation);
+	Bullet(TextureSystem* ts, float posx, float posy, float rotation, int newDamage);
 	~Bullet();
 	void SetPos(float x, float y) { pos.x = x; pos.y = y; };
 	sf::Vector2f GetPos() { return pos; };
@@ -22,5 +23,6 @@ public:
 	void Update(float dt);
 	bool GetShouldDestroy();
 	void Render(sf::RenderWindow* window);
+	int GetDamage() { return Damage; };
 };
 

@@ -3,7 +3,7 @@
 #include<iostream>
 
 
-Bullet::Bullet(TextureSystem* ts, float posx, float posy, float rotation):
+Bullet::Bullet(TextureSystem* ts, float posx, float posy, float rotation, int newDamage):
 lifeTime(0)
 {
 
@@ -14,6 +14,7 @@ lifeTime(0)
 	pos.y = posy;
 	sprite.setPosition(pos.x, pos.y);
 	sprite.setRotation(rotation);
+	Damage = newDamage;
 
 }
 

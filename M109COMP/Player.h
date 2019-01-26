@@ -6,6 +6,7 @@
 #include "Weapon.h"
 #include "Bullet.h"
 #include <vector>
+#include "adMath.h"
 
 //class Weapon;
 
@@ -18,8 +19,13 @@ private:
 	AnimatedSprite meleeSprite;
 	AnimatedSprite* currentAnimation;
 	bool Shooting = false;
+	bool Meleeing = false;
+	bool meleed;
 	Weapon* weapons[4];
+	sf::Keyboard::Key weaponSelectButtons[4];
 	TextureSystem* ts;
+	float health;
+	bool dead;
 
 	Weapon* equippedWeapon;
 	
@@ -39,9 +45,16 @@ public:
 	void UpdateView(sf::View* view);
 	void KeepInBounds();
 	void EquipWeapon(int weaponID);
+	void SelectWeapon();
+	Weapon* GetWeapon() { return equippedWeapon; };
 	void Render(sf::RenderWindow* window);
+	bool GetMeleeAttacked();
+	void Hurt(float value) { health -= value; };
+	float GetHealth() { return health; };
+	float GetRotation() { return currentAnimation->GetSprite()->getRotation(); };
 	void Shoot();
 	void SetActionState(int num) { actionState = num; };
+	void Reset();
 
 	std::vector<Bullet> bullets;
 	

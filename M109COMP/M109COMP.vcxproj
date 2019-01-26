@@ -115,14 +115,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="adMath.cpp" />
     <ClCompile Include="AnimatedSprite.cpp" />
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="BackStory.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameHUD.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="CreditScreen.cpp" />
+    <ClCompile Include="GameMenu.cpp" />
     <ClCompile Include="TextureSystem.cpp" />
     <ClCompile Include="TitleScreen.cpp" />
     <ClCompile Include="Weapon.cpp" />
@@ -132,11 +137,15 @@
     <ClInclude Include="adMath.h" />
     <ClInclude Include="AnimatedSprite.h" />
     <ClInclude Include="Background.h" />
+    <ClInclude Include="BackStory.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameHUD.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="CreditScreen.h" />
+    <ClInclude Include="GameMenu.h" />
     <ClInclude Include="States.h" />
     <ClInclude Include="TextureSystem.h" />
     <ClInclude Include="TitleScreen.h" />

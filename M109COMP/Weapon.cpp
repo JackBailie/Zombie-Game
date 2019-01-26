@@ -1,7 +1,7 @@
 #include "Weapon.h"
 #include <iostream>
 
-Weapon::Weapon(int newDamage, int newAmmo, int newMeleeDamage, bool newRanged, bool newAvailable, int newMagSize)
+Weapon::Weapon(int newDamage, int newAmmo, int newMeleeDamage, bool newRanged, bool newAvailable, int newMagSize, std::string newName, int rof)
 {
 
 	damage = newDamage;
@@ -11,6 +11,10 @@ Weapon::Weapon(int newDamage, int newAmmo, int newMeleeDamage, bool newRanged, b
 	available = newAvailable;
 	magSize = newMagSize;
 	nextFireTime = 0;
+	name = newName;
+	magContents = magSize;
+	reloading = false;
+	rateOfFire = rof;
 
 	if (!fireSoundBuffer.loadFromFile("Assets/Sounds/ak47-1.wav"))
 	{
@@ -72,6 +76,16 @@ void Weapon::Update(float dt)
 {
 
 	nextFireTime -= dt;
+	if (getReloading() && reloadSprite.GetFinished())
+	{
+
+		reloading = false;
+		int ammoTake = std::min(magSize, ammo);
+		magContents = ammoTake;
+		ammo -= ammoTake;
+
+
+	}
 	//std::cout << nextFireTime << std::endl;
 
 }
@@ -92,16 +106,36 @@ bool Weapon::Shoot(Player* player)
 
 	}
 	//weapon has fired successfully
-	nextFireTime = 1.0f/600*60;
+	nextFireTime = 1.0f/rateOfFire*60;
 	fireSound.stop();
 	fireSound.play();
+	magContents--;
 	return true;
+
+}
+
+void Weapon::Reload()
+{
+
+	reloading = true;
 
 }
 
 bool Weapon::CanShoot()
 {
-	if (ammo <= 0 || nextFireTime > 0)
+	if (nextFireTime > 0)
+	{
+		return false;
+	}
+	else if (magContents <= 0)
+	{
+		if (ammo > 0)
+		{
+			Reload();
+		}
+		return false;
+	}
+	else if (reloading)
 	{
 		return false;
 	}

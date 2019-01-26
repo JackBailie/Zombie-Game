@@ -3,6 +3,7 @@
 #include "AnimatedSprite.h"
 #include<string>
 #include<SFML\Audio.hpp>
+#include"adMath.h"
 
 class Player;
 
@@ -20,15 +21,19 @@ class Weapon
 {
 
 private:
+	std::string name;
 	int damage;
 	int meleeDamage;
 	int ammo;
 	bool ranged;
 	bool available;
 	int magSize;
+	int magContents;
 	float nextFireTime;
+	bool reloading;
 	sf::SoundBuffer fireSoundBuffer;
 	sf::Sound fireSound;
+	int rateOfFire;
 	
 public:
 	AnimatedSprite walkSprite;
@@ -38,12 +43,20 @@ public:
 	AnimatedSprite reloadSprite;
 
 
-	Weapon(int newDamage, int newAmmo, int newMeleeDamage,bool newRanged, bool newAvailable, int newMagSize);
+	Weapon(int newDamage, int newAmmo, int newMeleeDamage,bool newRanged, bool newAvailable, int newMagSize, std::string newName, int rof);
 	void SetUpSprites(int weapon, TextureSystem* textureSystem);
 	void Update(float dt);
 	bool Shoot(Player* player);
 	bool CanShoot();
 	bool IsAvailable() { return available; }
+	void SetName(std::string newName) { name = newName; };
+	void Reload();
+	bool getReloading() { return reloading; };
+	int getMagContents() { return magContents; };
+	int getAmmo() { return ammo; };
+	int GetMeleeDamage() { return meleeDamage; };
+	int GetDamage() { return damage; };
+	std::string GetName() { return name; };
 
 
 };

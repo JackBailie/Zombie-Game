@@ -1,0 +1,26 @@
+Library:
+SFML
+
+Lead Progammer:
+Jack Bailie
+
+Lead Artist:
+John Doe
+
+Programmers:
+John Carmack
+John Romero
+
+Artists:
+Leonardo D'vinci
+Mondrean
+
+Acknoledgements:
+wire.png (http://dementiarunner.deviantart.com/art/wire-seamless-png549508647)
+dirt.png (http://hhh316.deviantart.com/art/Seamless-Cracked-Dirt-Texture347828451)
+fog.png (http://www.freeiconspng.com/png-images/)
+Player character sprite images (http://opengameart.org/content/animated-topdown-survivor-player)
+NPC sprite images (http://opengameart.org/content/animated-top-down-zombie)
+Blood sprite images (http://opengameart.org/content/blood-effect-sprite-sheet)
+game-logo.png (http://dogtimes.wps60.org/?p=2866)
+menu.png (https://wall.alphacoders.com/by_sub_category.php?id=81399)

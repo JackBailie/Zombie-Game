@@ -53,7 +53,10 @@ void AnimatedSprite::Render(sf::RenderWindow* window)
 
 void AnimatedSprite::SetFrame(int frame)
 {
-	sprite.setTextureRect(Frame.at(frame));
+	if (frame >= 0 && frame < Frame.size())
+	{
+		sprite.setTextureRect(Frame.at(frame));
+	}
 }
 
 void AnimatedSprite::Update(float dt, float speed)

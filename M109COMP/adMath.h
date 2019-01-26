@@ -2,48 +2,21 @@
 #define _ADMATH_H_
 
 #include<SFML\Graphics.hpp>
+#include<cmath>
 //this is a file with a few wee extra math functions that makes life easier for myself
 namespace am
 {
 
-	int Sign(float number)
-	{
+	int Sign(float number);
+	float Abs(float number);
+	
 
-		if (number > 0)
-		{
-			return 1;
-		}
-		else
-		{
+	sf::Vector2f RotationToDirection(float Rotation);
+	float PositionToRotation(sf::Vector2f pos);
+	
 
-			return -1;
-
-		}
-
-	}
-	float Abs(float number)
-	{
-
-		if (number < 0)
-		{
-
-			return -number;
-
-		}
-
-		return number;
-
-	}
-
-	sf::Vector2f RotationToDirection(float Rotation)
-	{
-
-		sf::Vector2f tempDirection;
-		tempDirection.x = sin(Rotation*0.0174533f);
-		tempDirection.y = -cos(Rotation*0.0174533f);
-		return tempDirection;
-
-	}
+	float Clamp(float val, float min, float max);
+	
 
 }
 

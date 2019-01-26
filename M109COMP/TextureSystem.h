@@ -36,6 +36,7 @@ enum enum_Textures
 	tex_Zombie_Attack,
 	tex_Zombie_Idle,
 	tex_Zombie_Move,
+	tex_MetalSlab,
 	tex_Max
 
 };
